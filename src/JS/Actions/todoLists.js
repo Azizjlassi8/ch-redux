@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK } from "../ActionsTypes/todoLists"
+import { ADD_TASK, DELETE_TASK, DONE_TASK, EDIT_TASK } from "../ActionsTypes/todoLists"
 
 export const addTask = (newTask) => {
     return {
@@ -11,5 +11,19 @@ export const deleteTask = (id) => {
     return {
         type: DELETE_TASK,
         payload: id,
+    };
+};
+
+export const doneTask = (id) => {
+    return {
+        type: DONE_TASK,
+        payload: id,
+    };
+};
+
+export const editTask = (id, newTask) => {
+    return{
+        type: EDIT_TASK,
+        payload: { id, newTask },
     };
 };
